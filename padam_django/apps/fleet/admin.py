@@ -1,6 +1,5 @@
 from django.contrib import admin
-
-from . import models
+from . import models, forms
 
 
 @admin.register(models.Bus)
@@ -18,4 +17,4 @@ class BusStopAdmin(admin.ModelAdmin):
 
 @admin.register(models.BusShift)
 class BusShiftAdmin(admin.ModelAdmin):
-    readonly_fields = ('start_time', 'end_time')
+    form = forms.BusShiftForm
